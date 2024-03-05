@@ -21,7 +21,7 @@ def get_names(spicy_foods):
    for l in range(0,len(spicy_foods)):     
     the_list=spicy_foods[l]["name"]
     the_list2.append(the_list)
-    print(the_list2)    
+   # print(the_list2)    
    return the_list2     
 get_names(spicy_foods)
 
@@ -46,7 +46,7 @@ result=print_spicy_foods(spicy_foods)
 def get_spicy_food_by_cuisine(spicy_foods, cuisine):  
   for l in range(0,len(spicy_foods)):      
      if spicy_foods[l]["cuisine"]==cuisine:  
-        print(spicy_foods[l])     
+        #print(spicy_foods[l])     
         return spicy_foods[l]
 my_result=get_spicy_food_by_cuisine(spicy_foods,"Thai")
 
@@ -57,7 +57,8 @@ def print_spiciest_foods(spicy_foods):
    the_heat_level=spicy_foods[x]["heat_level"]
    the_emojis="🌶"*the_heat_level
    if spicy_foods[x]["heat_level"]>5:
-     print(f"{the_name} ({the_cuisine}) | Heat Level: {the_emojis}")
+      pass
+      print(f"{the_name} ({the_cuisine}) | Heat Level: {the_emojis}")
 the_result=print_spiciest_foods(spicy_foods)
 new_spices=[]
 def get_average_heat_level(spicy_foods):   
@@ -70,26 +71,16 @@ def get_average_heat_level(spicy_foods):
 all_result=get_average_heat_level(spicy_foods) 
 
 new_spicy_foods=[]
-def create_spicy_food(spicy_foods, spicy_food):   
-    new_len=spicy_foods
-    new_spicy_foods=new_len.append(spicy_food) 
-    print(new_spicy_foods)    
-    # for n in range(0,len(spicy_foods)):
-    #     new_len.append(spicy_foods[n])
-    #     new_len.append(spicy_food)
-    #    # print(new_len)
-    # return new_len
-         #new_spicy_foods=spicy_foods.append(spicy_food)
-   #print(spicy_food)
-#new_result=create_spicy_food(spicy_foods,
-       # {"name": "Buffalo Wings",
-       # "cuisine": "American",
-       # "heat_level": 3,})
-#print(new_result)
+def create_spicy_food(spicy_foods, spicy_food):  
+   
+    all_new_spicy_foods=spicy_foods.copy()
+    all_new_spicy_foods.append(spicy_food)
+    #print(new_spicy_foods)    
+    return all_new_spicy_foods
 my_new_result=create_spicy_food(spicy_foods, 
                                 {
                 "name": "Griot",
                 "cuisine": "Haitian",
                 "heat_level": 10,
             }, )
-         
+print(my_new_result)        
